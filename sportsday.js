@@ -80,3 +80,5 @@ function highJump(scores) {
     } else {
       console.log("Event was cancelled!");
     }
+  }
+}
