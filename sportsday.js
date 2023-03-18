@@ -83,16 +83,3 @@ function highJump(scores) {
 }
 
 
-openingCeremony(function (score) {
-  console.log("Ceremony (Callback 1) Function  called!");
-  race100M(score, function (score) {
-    console.log("Race100M (Callback 2) function  called!");
-    longJump(score, function (score) {
-      console.log("LongJump (Callback 3) function  called!");
-      highJump(score, function (score) {
-        console.log("HighJump (Callback 4) function  called!");
-        awardCeremony(score);
-      });
-    });
-  });
-});
