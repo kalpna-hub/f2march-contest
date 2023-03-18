@@ -1,8 +1,7 @@
-// Initializing the score object
-let scores = { red: 0, blue: 0, green: 0, yellow: 0 };
-
 function openingCeremony(cb) {
   console.log("Let the games begin");
+  let scores = { red: 0, blue: 0, green: 0, yellow: 0 };
+  
   setTimeout(() => {
     race100M(scores, cb);
   }, 1000);
@@ -82,3 +81,18 @@ function highJump(scores) {
     }
   }
 }
+
+
+openingCeremony(function (score) {
+  console.log("Ceremony (Callback 1) Function  called!");
+  race100M(score, function (score) {
+    console.log("Race100M (Callback 2) function  called!");
+    longJump(score, function (score) {
+      console.log("LongJump (Callback 3) function  called!");
+      highJump(score, function (score) {
+        console.log("HighJump (Callback 4) function  called!");
+        awardCeremony(score);
+      });
+    });
+  });
+});
